@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Your awesome title</title>
+    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+</description>
+    <link>http://yourdomain.com/</link>
+    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Wed, 20 Apr 2016 16:23:37 +0800</pubDate>
+    <lastBuildDate>Wed, 20 Apr 2016 16:23:37 +0800</lastBuildDate>
+    <generator>Jekyll v3.1.3</generator>
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Wed, 20 Apr 2016 14:36:04 +0800</pubDate>
+        <link>http://yourdomain.com/jekyll/update/2016/04/20/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2016/04/20/welcome-to-jekyll.html</guid>
+        
+        
+        <category>jekyll</category>
+        
+        <category>update</category>
+        
+      </item>
+    
+      <item>
+        <title>Js Pool</title>
+        <description>&lt;p&gt;####背景&lt;/p&gt;
+
+&lt;p&gt;  随着nodejs在各位平台不断扩展，js的触角延伸的越来越广，使用js编写全栈的应用已经不再是不可能。&lt;/p&gt;
+
+&lt;p&gt;  但机遇与挑战是并存的，能做更多的事，也会面临更多的问题，也不过几年前，前端仅需切切页面，加一点点的脚本即可，而当下各种 WebApp &amp;amp; h5 游戏乱入，交互成了重头戏，算法跟数据结构，这些曾经与前端技术无缘的思想，在前端逐步铺陈开来，在复杂的应用场景中给前端的性能优化带来转机。&lt;/p&gt;
+
+&lt;p&gt;  我这次要讲的“池”就是在传统程序开发中很常用的一种优化方法，主要思想是在更快的事务处理与更少的资源消耗中取得平衡。在Web后端的应用有：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;静态池，用来解决高并发访问下快速响应的瓶颈.&lt;/li&gt;
+  &lt;li&gt;连接池，解决了如何在有限的连接资源下有序高效地响应请求.&lt;/li&gt;
+  &lt;li&gt;线程池，也用来解决并发运行中的问题。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;  上面几个示例大家若不了解相应的后端应用场景，可能会觉得云里来雾里去，摸不着头脑。下面我就以线程池为例，从基本的概念出发，结合我们前端的场景，辅以业务中的实例，来讲解这一思想。（文笔不好，写的不好的地方自行脑补哈）&lt;/p&gt;
+
+&lt;p&gt;####场景描述&lt;/p&gt;
+
+&lt;p&gt;  试想一种场景，&lt;strong&gt;有很多事务要处理，但事务可能某个时间集中涌来，也可能间隔很长时间也有没事务来。&lt;/strong&gt;处理事务需要工人，每个工人只能串行处理事务，所以要加快事务的处理速度最好的方式是增加工人数，工人越多事务处理越快。但每个工人都是有成本的，不可能无限增加。闲置的工人会造成资源浪费。清除闲置工人有成本，新增工人也需要成本，&lt;strong&gt;问题就是如何在低成本下保证事务的处理速度。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;  把事务换成是待处理的一段脚本，工人换成执行脚本的引擎，就是典型如何在受竞争的处理资源中协调一种最优的分配方案保证脚本最快得到执行。这就是线程池要解决的问题。&lt;/p&gt;
+
+&lt;p&gt;  从上面的描述可知，问题的解决方案其实并不复杂，就是根据场景不同动态的配置工人数，事多的时候多加人，事少的时候减少人，另外需要加入最高人数限制规避资源瓶颈，最低人数限制以期快速响应，避免太多准备时间。&lt;/p&gt;
+
+&lt;p&gt;  虽然思路很清晰，但要转换成代码实现并不容易。一是代码很死板，并不能像人那样随意跳转；二是不同进程&amp;amp;线程间通信其实很复杂。&lt;/p&gt;
+
+&lt;p&gt;下面介绍下线程池的技术要点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;工作者线程
+    &lt;ul&gt;
+      &lt;li&gt;即线程池中可以重复利用起来执行任务的线程，一个worker的生命周期内会不停的处理多个业务job。&lt;/li&gt;
+      &lt;li&gt;线程池“复用”的本质就是复用一个worker去处理多个job，&lt;/li&gt;
+      &lt;li&gt;“流控”的本质就是通过对worker数量的控制实现并发数的控制。通过设置不同的参数来控制worker的数量可以实现线程池的容量伸缩从而实现复杂的业务需求&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;待处理job存储&lt;/li&gt;
+  &lt;li&gt;工作者线程workers的数量是有限的，同一时间最多只能处理最多workers数量个job。&lt;/li&gt;
+  &lt;li&gt;对于来不及处理的job需要保存到等待队列里，空闲的工作者work会不停的读取空闲队列里的job进行处理。&lt;/li&gt;
+  &lt;li&gt;基于不同的队列实现，可以扩展出多种功能的线程池，如定制队列出队顺序实现带处理优先级的线程池、定制队列为阻塞有界队列实现可阻塞能力的线程池等。&lt;/li&gt;
+  &lt;li&gt;对于流量控制，一方面通过控制worker数控制并发数和处理能力，另一方面可基于队列控制线程池中线程数量的上限&lt;/li&gt;
+  &lt;li&gt;初始化与启动&lt;/li&gt;
+  &lt;li&gt;即线程池参数的设定和多个工作者workers的初始化。&lt;/li&gt;
+  &lt;li&gt;通常有一开始就初始化指定数量的workers或者有请求时逐步初始化工作者两种方式。&lt;/li&gt;
+  &lt;li&gt;前者线程池启动初期响应会比较快但造成了空载时的少量性能浪费，后者是基于请求量灵活扩容但牺牲了线程池启动初期性能达不到最优。&lt;/li&gt;
+  &lt;li&gt;处理job算法&lt;/li&gt;
+  &lt;li&gt;业务给线程池添加任务job时线程池的处理算法。&lt;/li&gt;
+  &lt;li&gt;有的线程池基于算法识别是要直接处理job还是增加工作者数处理job又或者放入待处理队列。&lt;/li&gt;
+  &lt;li&gt;也有的线程池会直接将job放入待处理队列，等待工作者worker去取出执行。&lt;/li&gt;
+  &lt;li&gt;工作者线程增减算法&lt;/li&gt;
+  &lt;li&gt;业务线程数不是持久不变的，有高低峰期。线程池要有自己的算法根据业务请求频率高低调节自身工作者workers的数量来调节线程池大小，从而实现业务高峰期增加工作者数量提高响应速度，而业务低峰期减少工作者数来节省服务器资源。&lt;/li&gt;
+  &lt;li&gt;增加算法通常基于几个维度进行：待处理工作job数、线程池定义的最大最小工作者数、工作者闲置时间。&lt;/li&gt;
+  &lt;li&gt;线程池的终止&lt;/li&gt;
+  &lt;li&gt;应用停止时线程池要有自身的停止逻辑，保证所有job都得到执行或者抛弃&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;它们之间的关系图如下：
+&lt;img src=&quot;http://n.sinaimg.cn/default/2332b226/20160406/workers.png&quot; alt=&quot;线程池描述&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;  上面要点的介绍是从原理出发，全面的讲解，在现实场景中很少能够全部覆盖到，特别是在前端。很多问题都不会只有一个解，把一些好的算法思想及模式应用在代码实现上是很依赖经验的。&lt;/p&gt;
+
+&lt;p&gt;  但经验也需要一步步积累，所以要勇于尝试新的解法。但事实上人总会优先想的自己熟悉的方面，所以尝试新东西往往难在主动跨出第一步。我下面要讲的场景其实有很多解法，使用上面的思路并不一定是最佳方式，可以在如何发散思维，跨出尝试新东西的第一步这方面上给大家借鉴。&lt;/p&gt;
+
+&lt;p&gt;####代码实现&lt;/p&gt;
+
+&lt;p&gt;  先说下需求：客户端正文中加一围观按钮，点击一下出来一个小图标并伴随一段向上飘的动画，连续点击需要按点击数出来相应数量的小图标。&lt;/p&gt;
+
+&lt;p&gt; 实现上的问题：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;同一时间出来太多的动画会导致页面崩溃，需要限制数量&lt;/li&gt;
+  &lt;li&gt;动画结束的节点需要回收，要不然节点数量无法控制，也容易导致其他问题&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;针对上面两个问题，我按着线程池的思想确定几个点：&lt;/p&gt;
+
+&lt;p&gt;worker。worker对象，实现状态记录、生成动画（执行事务）、状态复位。代码如下：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var workIns = {
+  endTime: 0,  // 忙结束时间戳，用于worker回收
+  working: false, // 忙&amp;amp;闲标记
+  stat: {  // 动画类型及起始点，具体的交互需求
+    curAnimate: null,
+    startPos: [0, 0]
+  },
+  node: $(node), // 绑定html结点
+  run: function(set){ // 事务执行
+    var nowTime = Date.now();
+    var curIns = this;
+
+    this.endTime = nowTime + (set.workeTime || cnf.workeTime);
+    this.node.removeClass(&#39;hide&#39;);
+    this.stat.curAnimate &amp;amp;&amp;amp; this.node.removeClass(this.stat.curAnimate);
+    this.node.addClass(set.animateType);
+    //console.log(set.animateType)
+    this.node.css({top: set.pos[0], left: set.pos[1]});
+    this.stat.curAnimate = set.animateType;
+  },
+  stop: function(){ //状态复位
+    this.working = false;
+    this.endTime = 0;
+    //this.node.addClass(&#39;hide&#39;);
+  }
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;woker的增减跟job的处理。实现最大个数限制、生成woker方法、job分配&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var workerPoolFactory = function(cnf){
+  this._construct(cnf);
+};
+workerPoolFactory.prototype = {
+  _construct: function(cnf){
+    if(!cnf.workerTemplate || !cnf.workerArea){
+      throw new Error(&#39;missing worker template or worker area!&#39;);
+    }
+    this._cnf = {  //配置
+        workerArea: cnf.workerArea, // 视图工作区
+        workerTemplate: cnf.workerTemplate, // 工作者结点html模板
+        workeTime: 1000, // 执行动画时长
+        maxLen: cnf.maxWorker || 10, //最大woker数
+        minLen: cnf.minWorker || 5, // 未使用
+        AliveTime: cnf.workerAliveTime || 15 * 60 * 1000 //未使用
+    };
+  },
+  _buildWorker: function(){ //生成worker
+    var self = this;
+    var cnf = this._cnf;
+    var node = cnf.workerTemplate.cloneNode();
+    (node.children.length === 0) &amp;amp;&amp;amp; ([].forEach.call(cnf.workerTemplate.children,function(elems){  //初始化html结点
+      node.appendChild(elems.cloneNode());
+    }));
+    var workIns = {……}; // 生成Woker
+    workIns.node.addClass(&#39;hide&#39;);
+    cnf.workerArea.append(workIns.node); //加入视图工作区
+    return workIns;
+  },
+  requireWorker: function(){ //分配job及控制worker的生成及回收
+    var wq = this.workerQueue;
+    var ret = null;
+    var nowTime = Date.now();
+    (wq.busy &amp;gt; 0) &amp;amp;&amp;amp; wq.all.forEach(function(worker, index){ 
+     //当忙队列不空里，需要扫描队列以回收空闲的Worker
+     /* js里是串行处理的，所以需要扫描空闲worker,其他语言可以并发执行的理论上是可以
+     * 有个进程啥事也不干，只扫描空闲worker，就不需要在分配job的逻辑里做扫描。
+     * 不同编程语言实现不一样，思想可能是共通的。
+      if(worker.working &amp;amp;&amp;amp; worker.endTime &amp;lt;= nowTime){
+          worker.stop();
+          wq.busy --;
+          wq.wait.push(index);
+      }
+    });
+    if(wq.wait.length &amp;gt; 0){ //有空闲worker 直接拿来复用
+      wq.busy ++;
+      ret = wq.all[wq.wait.shift()];
+      ret.working = true;
+    }
+    if(ret === null &amp;amp;&amp;amp;  wq.len &amp;lt; this._cnf.maxLen){ 
+    /* 若无空闲，且未达到最大worker数则生成新的Worker,否则丢弃当前事务
+    * 当前场景无需保留处理能力外的事务，但大多数其他场景是需要保留的，也就是对应
+    * “待处理job存储”这个点
+    */
+        var ret = this._buildWorker();
+        ret.working = true;
+        wq.busy ++;
+        wq.len ++;
+        ret.id = wq.all.push(ret) - 1;
+    }
+    return ret;
+  },
+  get workerQueue(){  //worker 队列 便于复用及回收
+    return this._workerQueue || (this._workerQueue = {
+      len: 0, 
+      busy: 0, 
+      wait: [], // item is number 
+      all: [] // item is dict
+    });
+  },
+  set workerQueue(val){
+    return null;  
+  },
+};
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;####结语&lt;/p&gt;
+
+&lt;p&gt;  上面基本上把我想说的都表达出来了，写的蛮长的。虽然我自认为已经想得很清楚了，但真正写起来，会发现很多地方都描述不出来，很纠结。&lt;/p&gt;
+
+&lt;p&gt;  嗯，功能其实年前就实现了，但一直没分享出来，这次从想清楚到写完也花了蛮长时间的。可能词不达意吧，怪我文笔不好，但也已经尽力了！&lt;/p&gt;
+</description>
+        <pubDate>Wed, 06 Apr 2016 00:00:00 +0800</pubDate>
+        <link>http://yourdomain.com/2016/04/06/js-pool.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/2016/04/06/js-pool.html</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>
