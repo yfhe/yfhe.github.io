@@ -17,3 +17,4 @@ github_username:  yfhe
 
 # Build settings
 markdown: kramdown
+#markdown: showdown

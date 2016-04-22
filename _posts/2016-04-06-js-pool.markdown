@@ -1,3 +1,9 @@
+---
+layout: post
+title: "js pool"
+categories: jekyll update
+---
+
 ####背景
 
 &emsp;&emsp;随着nodejs在各位平台不断扩展，js的触角延伸的越来越广，使用js编写全栈的应用已经不再是不可能。
