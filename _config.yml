@@ -16,5 +16,6 @@ url: "http://yfhe.github.io" # the base hostname & protocol for your site
 github_username:  yfhe
 
 # Build settings
-markdown: kramdown
+#markdown: kramdown
 #markdown: showdown
+markdown: redcarpet
